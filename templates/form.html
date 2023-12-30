@@ -1,0 +1,18 @@
+{% extends "components/base.html" %}
+
+{% block title%}Main page{% endblock title%}
+
+{% block main %}
+
+
+<form class="flex flex-col gap-y-5 mx-80 mt-48" method="POST" action="{% url 'home' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3 class = 'text-l text-gray-700 pl-10 font-bold '> Заполните форму</h3>
+        <input type="text" name="name" id="" class='border border-3 rounded-full border-green-700 w-96 h-10 pl-5 ' placeholder="Имя" >
+        <textarea name="report_text" id="" cols="30" rows="10"placeholder="Жалоба" class="border py-5 pl-5 border-3 rounded-lg border-green-700 w-96 resize-none"></textarea>
+        <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-0.5 px-3 border border-green-700 rounded w-52 p-5">Отправить</button>
+
+    </form>
+
+
+{% endblock main %}

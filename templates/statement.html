@@ -1,0 +1,16 @@
+{% extends "components/base.html" %}
+
+{% block title%}Main page{% endblock title%}
+
+{% block main %}
+
+
+<div class="flex flex-col gap-y-5 mx-80 pl-2 mt-48">
+    <p class="text-l text-gray-700 pl-5 font-bold">Имя</p>
+    <span class="border border-3 rounded-full border-2 border-green-950 w-96 h-8 text-gray-700 font-bold pl-2">{{obj.name}}</span>
+    <p class="text-l text-gray-700 pl-5 font-bold">Жалоба:</p>
+    <span class="border border-3 rounded-md border-green-950 border-2 w-96 h-20 text-gray-700 font-bold pl-2">{{obj.report_text}}</span>
+    <a href="{% url 'statement_delete' obj.id %}" class=" w-28 rounded-md border border-2 border-green-950 text-l text-gray-700 pl-5 font-bold">удалить</a>
+</div>
+
+{% endblock main %}  
